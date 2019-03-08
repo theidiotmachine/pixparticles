@@ -25,3 +25,10 @@ to compile, and
     mill pixparticles.run
 
 to run. Note that the operation and output is hardcoded in the main PixParticles.scala file, so you will need to change that.
+
+## How it works
+You create an instance of a ParticleGenerator and push it into an instance of a Renderer2D, call render on that, and then use standard java IO to push the BufferedImage into a file. The generator works by creating a bunch of BaseParticle2Ds, which evolve and render themselves.
+
+In PixParticles.scala there are a bunch of commented out lines... they will not work, they are lies, and are there because I couldn't be bothered to refactor my old workings when I settled on the current architecture. 
+
+You could, if you wanted, write your own particles, generator, or even renderer.
